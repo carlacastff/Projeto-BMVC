@@ -1,0 +1,305 @@
+body {
+  background-color: #E4E2DD;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cabeçalho {
+  background-color: #E4E2DD;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.linha {
+  width: 99vw;
+  height: 1px;
+  background-color: #000;
+  margin: 0;
+  position: absolute;
+  top: 85px;
+  margin-bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  position: absolute;
+  left: 80px;
+  top: -25px;
+  width: 180px;
+  height: 112px;
+}
+
+header {
+  position: relative;
+  height: 120px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 120px;
+  position: relative;
+}
+
+.Premium, .Sobre {
+  position: absolute;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  top: 51px;
+}
+
+.Catálogo { 
+    position: absolute;
+    font-weight: 700;
+    font-size: 16px;
+    left: 450px; 
+    color:#992800;
+    text-decoration: none;
+    top: 51px;
+}
+
+.Premium { left: 686px; }
+.Sobre { left: 923px; }
+
+.Premium:hover, .Sobre:hover{
+  color:#992800;
+}
+
+.IconFav, .IconShop, .IconPerfil {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  top: 45px;
+}
+.IconFav { left: 1226px; }
+.IconShop { left: 1295px; }
+.IconPerfil { left: 1365px; }
+
+.containerBanner {
+  margin-top: -30px;
+  padding: 0;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background: linear-gradient(360deg, #e4e2dd 0%, #3160A6 100%);
+  margin: 0;   /* ← adiciona isso */
+  padding: 0;  /* ← adiciona isso */
+}
+
+.Pesquisa {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  display: flex; /* Adicionei display flex */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  padding: 100px 0 20px 0;
+}
+
+.searchBarra {
+  position: relative;
+  width: 496px;
+  height: 56px;
+  background: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Para distribuir input e botão */
+  opacity: 0.5;
+  padding: 0 15px; /* Espaço interno */
+  box-sizing: border-box;
+}
+
+.searchBarra:focus-within {
+  border: 2px solid #d34a24;
+  box-shadow: 0px 5px 25px #992800;
+  transform: translateY(-5px);
+}
+
+.pesquisaLiteral {
+  border: none;
+  color: #292929;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  width: 100%;
+  padding: 0 10px;
+  outline: none;
+}
+
+.pesquisaLiteral::placeholder {
+  color: #292929;
+}
+
+.botãoPesquisa {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botãoPesquisa img {
+  width: 20px;
+  height: 20px;
+}
+
+.botãoPesquisa:hover {
+  background-color: rgba(0, 68, 255, 0.1);
+  border-radius: 5px;
+}
+
+.discosEssenciais {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  width: 100%;
+  background-color: #E4E2DD;
+  padding: 60px 10%;
+  box-sizing: border-box;
+}
+
+.discosEssenciais img {
+  width: 280px;
+  height: 280px;
+  box-shadow: 10px 5px 4px 5px rgba(0, 0, 0, 0.25);
+  margin-left: 70px;
+}
+
+.textoEssenciais {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 800px; 
+  margin-right: 200px; 
+  flex: 1;
+}
+
+.textoEssenciais h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  color: #992800;
+  margin: 0 0 15px 0;
+}
+
+.textoEssenciais h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: #292929;
+  margin: 0 0 20px 0;
+}
+
+.textoEssenciais p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6em;
+  color: #000;
+  margin: 0 0 30px 0;
+}
+
+.exploreMais {
+  background-color: #292929;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.exploreMais:hover {
+  background-color: #992800;
+}
+
+.seções {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  gap: 100px; 
+  padding: 100px 20px;
+}
+
+.card-seções {
+  position: relative;
+  width: 285px;
+  height: 280px;
+  background: #292929;
+  border-radius: 10px;
+  display: flex; /* Adicione flex para centralizar o conteúdo */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.card-seções:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+  background: #992800;
+}
+
+.card-seções img {
+  width: 185px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 30px;
+  display: block;
+}
+
+.card-seções p{
+  object-fit: contain;
+  color: #E4E2DD;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.footer {
+  background: #292929;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  margin-top: 80px;
+}
+
+.logoFooter {
+  width: 169px;
+  height: 116px;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+.footer p {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #E4E2DD;
+}

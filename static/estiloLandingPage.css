@@ -1,0 +1,458 @@
+body {
+  background-color: #E4E2DD;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cabeçalho {
+  background-color: #E4E2DD;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.linha {
+  width: 99vw;
+  height: 1px;
+  background-color: #000;
+  margin: 0;
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  position: absolute;
+  left: 80px;
+  top: -25px;
+  width: 180px;
+  height: 112px;
+}
+
+header {
+  position: relative;
+  height: 120px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 120px;
+  position: relative;
+}
+
+.Catálogo, .Premium, .Sobre {
+  position: absolute;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  top: 51px;
+}
+
+.Catálogo { left: 450px; }
+.Premium { left: 686px; }
+.Sobre { left: 923px; }
+
+.Catálogo:hover, .Premium:hover, .Sobre:hover{
+  color:#992800;
+}
+
+.IconFav, .IconShop, .IconPerfil {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  top: 45px;
+}
+.IconFav { left: 1226px; }
+.IconShop { left: 1295px; }
+.IconPerfil { left: 1365px; }
+
+.pesquisa {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  padding: 100px 0 20px 0;
+}
+
+.retangulo {
+  width: 1200px;
+  height: 599px;
+  background-color: #292929;
+  border-radius: 10px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.discoTocando {
+  position: absolute;
+  width: 580px;
+  height: 599px;
+  left: 120px;
+  top: 100px;
+  border-radius: 10px 0 0 10px;
+}
+
+.linhaLogo {
+  position: absolute;
+  width: 620px;
+  height: 31px;
+  left: 700px;
+  top: 668px;
+  border-radius: 0 0 10px 0;
+}
+
+.textoPesquisa1 {
+  position: absolute;
+  width: 417px;
+  left: 800px;
+  top: 200px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #E4E2DD;
+  text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+.searchBarra {
+  position: absolute;
+  width: 496px;
+  height: 56px;
+  left: 750px;
+  top: 450px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.searchBarra:focus-within {
+  border: 2px solid #d34a24;
+  box-shadow: 0px 4px 25px #d34a247c;
+  transform: translateY(-5px);
+}
+
+.pesquisaLiteral {
+  font-weight: 500;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0 15px;
+  color: #333;
+}
+
+.pesquisaLiteral::placeholder {
+  color: #666;
+  font-weight: 400;
+}
+
+.botãoPesquisa {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.botãoPesquisa:hover {
+  background-color: rgba(0, 68, 255, 0.1);
+}
+
+.botãoPesquisa img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0.7);
+  transition: filter 0.3s ease;
+}
+
+.botãoPesquisa:hover img {
+  filter: brightness(1);
+}
+
+.maisVendidos {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #E4E2DD;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.textoVendas {
+  font-weight: 700;
+  font-size: 40px;
+  color: #992800;
+  letter-spacing: 0.05em;
+  margin-bottom: 80px;
+}
+
+.vitrineVendidos {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+}
+
+.card-vendido {
+  text-decoration: none; /* tira sublinhado do link */
+}
+
+.retanguloMaisVendidos {
+  width: 350px;
+  height: 350px;
+  background: #292929;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.retanguloMaisVendidos:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  background-color: #992800; /* muda pra cor da marca ao passar o mouse */
+}
+
+.vitrineVendidos img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  filter: brightness(0.95);
+  transition: transform 0.3s ease;
+}
+
+.retanguloMaisVendidos:hover img {
+  transform: scale(1.05);
+}
+
+.bannerPremium {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  margin: 50px auto 50px auto;
+  background: radial-gradient(circle at left, #292929 50%, #000000 100%);
+  overflow: hidden;
+}
+
+.vinilDecorativo {
+  position: absolute;
+  right: -120px;
+  bottom: -140px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #3c3c3c 0%, #292929 60%, #000000 100%);
+  border: 10px solid #992800;
+  animation: girar 15s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.conteudoPremium {
+  position: relative;
+  z-index: 2;
+  padding: 80px 80px;
+  color: #E4E2DD;
+}
+
+.tituloPremium {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  max-width: 700px;
+}
+
+.textoPremium {
+  font-size: 20px;
+  font-weight: 500;
+  color: #d9d9d9;
+  max-width: 650px;
+  margin-bottom: 50px;
+  line-height: 1.6;
+}
+
+.textoPremium span {
+  color: #ff4a1c;
+  font-weight: 700;
+}
+
+.botaoAssine {
+  background: linear-gradient(90deg, #992800, #d13f00);
+  border: none;
+  border-radius: 50px;
+  padding: 18px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #d9d9d9;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(209, 63, 0, 0.5);
+}
+
+.botaoAssine:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(209, 63, 0, 0.7);
+}
+
+.generos {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #E4E2DD;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.generos h2 {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 40px;
+  color: #992800;
+  margin-bottom: 40px;
+  letter-spacing: 0.05em;
+}
+
+.carrossel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.carrossel {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 20px 0;
+}
+
+.carrossel::-webkit-scrollbar {
+  display: none;
+}
+
+.card-genero {
+  flex: 0 0 350px;
+  height: 350px;
+  background-color: #992800;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-genero:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  background: #292929;
+}
+
+.card-genero img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  filter: brightness(0.95);
+}
+
+.card-genero p {
+  color: #E4E2DD;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.03em;
+}
+
+.seta {
+  background-color: #292929;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.seta img{
+  opacity: 0;
+}
+
+.seta:hover img{
+  opacity: 100;
+}
+
+.seta:hover {
+  background-color: #992800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.seta-esquerda {
+  left: -70px;
+}
+
+.seta-direita {
+  right: -70px;
+}
+
+.footer {
+  background: #292929;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  margin-top: 80px;
+}
+
+.logoFooter {
+  width: 169px;
+  height: 116px;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+.footer p {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #E4E2DD;
+}

@@ -1,0 +1,276 @@
+body {
+  background-color: #E4E2DD;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cabeçalho {
+  background-color: #E4E2DD;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.linha {
+  width: 99vw;
+  height: 1px;
+  background-color: #000;
+  margin: 0;
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  position: absolute;
+  left: 80px;
+  top: -25px;
+  width: 180px;
+  height: 112px;
+}
+
+header {
+  position: relative;
+  height: 120px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 120px;
+  position: relative;
+}
+
+.Catálogo, .Premium, .Sobre {
+  position: absolute;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  top: 51px;
+}
+
+.Catálogo { left: 450px; }
+.Premium { left: 686px; }
+.Sobre { left: 923px; }
+
+.Catálogo:hover, .Premium:hover, .Sobre:hover{
+  color:#992800;
+}
+
+.IconFav, .IconShop, .IconPerfil {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  top: 45px;
+}
+.IconFav { left: 1226px; }
+.IconShop { left: 1295px; }
+.IconPerfil { left: 1365px; }
+
+.informaçõesPessoais{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 40px;
+    justify-content: center;
+}
+
+.informaçõesPessoais h1{
+    left: -500px;
+    position: relative;
+    display: block;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 61px;
+    letter-spacing: 0.05em;
+    color: #992800;
+}
+
+.informaçõesPessoais h2{
+    left: -115px;
+    display: block;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #292929;
+    position: relative;
+}
+
+.caixa {
+    object-fit: contain;
+    position: relative;
+    width: 480px;
+    height: 53px;
+    border: 1px solid #292929;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.linhaDupla {
+    display: flex;
+    gap: 0;
+}
+
+.caixaMetade1{
+    border-radius: 20px 0px 0px 20px;
+}
+
+.caixaMetade2{
+    border-radius: 0px 20px 20px 0px;
+}
+
+.caixaMetade1, .caixaMetade2{
+    object-fit: contain;
+    position: relative;
+    width: 240px;
+    height: 53px;
+    border: 1px solid #292929;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto { 
+    width: 75%;
+    margin-top: 15px;
+    left: 20px;
+    align-items: center;
+    outline: none;
+    border: none;
+    background: transparent;
+    object-fit: contain;
+    position: relative;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    color: #292929;
+}
+
+.seletor {
+    width: calc(100% - 40px);
+    padding: 0 0 0 20px;  /* alinhamento lateral */
+    height: 53px;         /* mesmo tamanho da caixa */
+    line-height: 53px;    /* centraliza verticalmente */
+    
+    border: none;
+    outline: none;
+    background: transparent;
+    
+    font-family: 'Montserrat';
+    font-size: 15px;
+    font-weight: 400;
+    color: #292929;
+
+    cursor: pointer;
+}
+
+.blocoPerfil {
+    padding: 40px 0px  ;
+    max-width: 700px;
+    width: 100%;
+    background: #f7f7f7;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+
+.tipoPerfil{
+    align-self: center;
+    align-items: center;
+    padding: 50px 100px;
+    justify-content: center;
+}
+
+.caixaTipo{
+    object-fit: contain;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    background: #D9D9D9;
+    height: 40px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+}
+
+.seletorTipoPerfil{
+    padding: 0 0 0 35px;  /* alinhamento lateral */
+    height: 40px;         /* mesmo tamanho da caixa */
+    line-height: 75px;    /* centraliza verticalmente */
+    border: none;
+    outline: none;
+    background: transparent;
+    
+    font-family: 'Montserrat';
+    font-size: 15px;
+    font-weight: 400;
+    color: #292929;
+
+    cursor: pointer;
+}
+
+.botao {
+  margin-top: 10px;
+  padding: 12px 28px;
+  background-color: #992800;      /* mesma cor do título, combina bem */
+  color: #ffffff;
+  font-family: 'Montserrat';
+  font-size: 15px;
+  font-weight: 400;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.botao:hover {
+  background-color: #7a2000;      /* mais escuro ao passar o mouse */
+  transform: translateY(-2px);    /* leve “subidinha” elegante */
+}
+
+.botao:active {
+  transform: translateY(0);       /* volta ao clicar */
+  background-color: #5b1800;
+}
+
+
+.footer {
+  background: #292929;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  margin-top: 80px;
+}
+
+.logoFooter {
+  width: 169px;
+  height: 116px;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+.footer p {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #E4E2DD;
+}

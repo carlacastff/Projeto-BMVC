@@ -1,0 +1,107 @@
+body {
+  background-color: #E4E2DD;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cabeçalho {
+  background-color: #E4E2DD;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.linha {
+  width: 99vw;
+  height: 1px;
+  background-color: #000;
+  margin: 0;
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  position: absolute;
+  left: 80px;
+  top: -25px;
+  width: 180px;
+  height: 112px;
+}
+
+header {
+  position: relative;
+  height: 120px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 120px;
+  position: relative;
+}
+
+.Catálogo, .Sobre {
+  position: absolute;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  top: 51px;
+}
+
+.Premium { 
+    position: absolute;
+    font-weight: 700;
+    font-size: 16px;
+    left: 686px; 
+    color:#992800;
+    text-decoration: none;
+    top: 51px;
+}
+
+.Catálogo { left: 450px; }
+.Sobre { left: 923px; }
+
+.Catálogo:hover, .Sobre:hover{
+  color:#992800;
+}
+
+.IconFav, .IconShop, .IconPerfil {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  top: 45px;
+}
+.IconFav { left: 1226px; }
+.IconShop { left: 1295px; }
+.IconPerfil { left: 1365px; }
+
+.footer {
+  background: #292929;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  margin-top: 80px;
+}
+
+.logoFooter {
+  width: 169px;
+  height: 116px;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+.footer p {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #E4E2DD;
+}
