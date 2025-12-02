@@ -1,5 +1,16 @@
-from bottle import route, run, template, static_file, request, post, get
-from models.produtos import ProdutoModel
+from bottle import route, run, template, static_file, request, post, redirect, response
+from models.produtos import ProdutoModel 
+from models.cadastros import Login
+import uuid
+
+def usuarioLogado():        #verifica se usuário está logado
+    sessaoID = request.get_cookie('sessaoID')
+    if not sessaoID:
+        return None
+    else:
+        usuario = Login()
+        return usuario.buscarSessao(sessaoID)
+
 
 @route('/<filepath:path>')      #rota generica para arquivos estáticos
 def serve_static(filepath):
@@ -21,19 +32,75 @@ def premium():
 def sobre():
     return template('views/sobre.tpl')
 
-@route('/Perfil')   #perfil -> produto = none e template deve mostrar a aba de criar produto
-def perfil_get():
-    return template('views/perfilUser.tpl', produto=None, abaAtiva='criarProduto')
-
-@post('/Perfil') #processa o form de tipoPerfil para saber se é usuario ou adm
+@route('/Perfil', method=['GET'])
 def perfil():
-    tipo = request.forms.get('tipoPerfil')
-    if tipo == "usuario":
-        return template('views/perfilUser.tpl')
-    else:
+    usuario = usuarioLogado()
+    if not usuario:
+        redirect('/Login')
+    
+    if usuario['tipo'] == 'admin':
         return template('views/perfilAdm.tpl', produto=None, abaAtiva='criarProduto',termoPesquisa='')
+    else:
+        return template('views/perfilUser.tpl', usuario=usuario)
+    
+@post('/MudarDados')
+def user():
 
-@post('/CadastrarProduto')  #recebe todos os forms de perfilAdm (menos tipoPerfil)
+    return template('views/perfilUser.tpl')
+
+@route('/Login', method=['GET', 'POST'])
+def login():
+    usuario = usuarioLogado()
+    if usuario:
+        redirect('/Perfil')
+    
+    if request.method == 'POST':
+        email = request.forms.get('email')
+        senha = request.forms.get('senha')
+        usuarioLogar = Login()
+        usuario = usuarioLogar.verificarLogin(email, senha)
+
+        if usuario:
+            sessaoIDnovo = str(uuid.uuid4())
+            usuarioID = usuario['id']
+            usuarioLogar.atualizarSessao(usuarioID, sessaoIDnovo)
+            response.set_cookie('sessaoID', sessaoIDnovo, path='/')
+            redirect('/Perfil')
+        else:
+            return "Login falhou"
+        
+    return template('views/perfilLogin.tpl')
+
+@route('/Cadastro', method=['POST', 'GET'])
+def cadastro():
+    usuario = usuarioLogado()
+    if usuario:
+        redirect('/Perfil')
+    
+    if request.method == 'POST':
+        email = request.forms.get('email')
+        usuarioCadastro = Login()
+        
+        if usuarioCadastro.buscaEmail(email):
+            return "Conta já existe, tente fazer login."
+        else:
+            dados = {
+                "email": email, 
+                "primeiroNome": request.forms.get('nome'), 
+                "segundoNome": request.forms.get('sobrenome'),
+                "senha": request.forms.get('senha'),
+                "telefone": request.forms.get('telefone')
+            }
+            sucesso, mensagem = usuarioCadastro.addConta(dados)
+            if sucesso:
+                redirect('/Login')
+            else:
+                return mensagem
+    
+    return template('views/perfilCadastro.tpl')
+
+
+@post('/CadastrarProduto')  #recebe todos os forms de perfilAdm
 def cadastrar_produto():
     if request.forms.get('adicionarProduto'):       #adiciona produto
         titulo = request.forms.get('titulo')
@@ -110,6 +177,39 @@ def cadastrar_produto():
         produto = model.pesquisar(termo)    # busca novamente (vai retornar None se tiver sido deletado)
         
         return template('views/perfilAdm.tpl', produto=produto, abaAtiva='deletarProduto',mensagem=resultado, tipo_mensagem='success',  termoPesquisa=termo)
+
+@route('/Usuario', method=['GET', 'POST'])
+def perfil_usuario():
+    usuario_model = Login()
+    usuario_sessao = usuarioLogado()
+    
+    if not usuario_sessao:
+        redirect('/Login')
+        
+    if request.method == 'POST':
+        acao = request.forms.get('acao')
+        
+        if acao == 'salvar':
+            novosDados =  {
+                'primeiroNome': request.forms.get('nome'),
+                'segundoNome': request.forms.get('sobrenome'),
+                'telefone': request.forms.get('telefone'),
+                'email': request.forms.get('email')
+            }
+            usuario_model.editar(novosDados, usuario_sessao['id'])
+            usuario_sessao = usuario_model.buscarSessao(request.get_cookie('sessaoID'))
+
+        elif acao == 'excluir':
+            resultado = usuario_model.deletar(usuario_sessao['id'])
+            response.delete_cookie('sessaoID')
+            redirect('/')
+            
+        elif acao == 'sair':
+            usuario_model.atualizarSessao(usuario_sessao['id'], None)
+            response.delete_cookie('sessaoID')
+            redirect('/')
+    
+    return template('views/perfilUser.tpl', usuario=usuario_sessao)
 
 if __name__ == '__main__':
     run(host='localhost', port=8080, debug=True)

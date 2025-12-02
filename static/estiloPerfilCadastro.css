@@ -97,120 +97,14 @@ nav ul {
     color: #992800;
 }
 
-.selecionarOp {
-    max-width: 700px;
-    margin: 40px auto;
-    background: #f7f7f7;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    font-family: 'Montserrat', sans-serif;
-}
-
-.selectB {
-    display: block;
-    margin: 0 auto;
-    border: none;
-    outline: none;
-    background: transparent;
-    text-align: center;
-    cursor: pointer;
-    margin-bottom: 25px;
-    font-size: 28px;
-    padding: 12px 14px;
-    color: #333;
-}
-
-.selecionarOp form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 95%;
-}
-
-.selecionarOp label {
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #333;
-    width: 95%;
-}
-
-.selecionarOp textarea{
-  width: 95%;
-  resize: vertical;
-}
-
-.selecionarOp input,
-.selectA,
-.selecionarOp textarea {
-  padding: 12px 14px;
-  border: 1px solid #292929;
-  border-radius: 20px;
-  font-size: 15px;
-  background: #fff;
-}
-
-.botaoAdd {
-  background: #992800;
-  color: #fff;
-  padding: 14px;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  text-align: center;
-  transition: 0.2s ease;
-}
-
-.selecionarOp file{
-  cursor: pointer;
-}
-
-#editarProduto,
-#deletarProduto {
-  display: none;
-}
-.editarProduto{
-  align-items: center;
-}
-
-.produtoCard {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 20px;
-  margin: 20px auto; /* Centraliza horizontalmente */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  font-family: 'Montserrat', sans-serif;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 350px;     /* tamanho bom */
-  position: relative; /* não usa absolute !! */
-}
-
-.produtoCapa {
-  width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.tipoPerfil{
-  padding: 5px 0px 50px 0px;
-  display: flex;
-  justify-content: center; 
-}
-
 .botao {
+  margin-top: 10px;
   padding: 12px 28px;
-  position: relative;
   background-color: #992800;      /* mesma cor do título, combina bem */
   color: #ffffff;
   font-family: 'Montserrat';
   font-size: 15px;
-  font-weight: 500;
-  align-self: center;
+  font-weight: 600;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -219,10 +113,104 @@ nav ul {
 
 .botao:hover, .botaoAdd:hover {
   background-color: #7a2000;      /* mais escuro ao passar o mouse */
-  transform: translateY(-2px);    /* leve “subidinha” elegante */
+  transform: translateY(-2px);
 }
 
 .botao:active, .botaoAdd:active {
   transform: translateY(0);       /* volta ao clicar */
   background-color: #5b1800;
+}
+
+.Cadastro {
+    max-width: 400px;
+    margin: 40px auto;
+    background: #f7f7f7;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Cadastro form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 95%;
+}
+
+.Cadastro label {
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6px;
+    color: #333;
+    width: 95%;
+}
+
+.Cadastro input, .Cadastro text {
+  padding: 12px 14px;
+  border: 1px solid #292929;
+  border-radius: 20px;
+  font-size: 15px;
+  background: #fff;
+}
+
+.Cadastro input{
+  width: 98%;
+}
+
+.botao{
+  width: 50%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.dentroSenha {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding-right: 25px;
+}
+
+#icon1, #icon2 {
+    position: absolute;
+    right: 15px; /* ⚠️ Alinhar à direita */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: url("/static/imagens/eye-crossed.png");
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+}
+
+#icon1.hide, #icon2.hide{
+    background: url("/static/imagens/eye.png");
+    background-size: cover;
+}
+
+.footer {
+  background: #292929;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  margin-top: 80px;
+}
+
+.logoFooter {
+  width: 169px;
+  height: 116px;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+.footer p {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #E4E2DD;
 }

@@ -234,16 +234,10 @@
       % end
     </div>
   </div>
-    <!-- Escolher Tipo de Perfil -->
+    <!-- Sair da conta -->
     <section class="tipoPerfil">
-      <form method="POST" action="/Perfil">
-        <div class="caixaTipo">
-          <select name="tipoPerfil" class="seletorTipoPerfil">
-            <option value="usuario">Usuário</option>
-            <option value="admin" selected>Admin</option>
-          </select>
-        </div>
-        <button type="submit" class="botao">Salvar</button>
+      <form method="POST" action="/Usuario">
+        <button type="submit" class="botao" name="acao" value="sair">Sair da conta</button>
       </form>
     </section>
 
